@@ -24,9 +24,9 @@ for i in $comic1 $comic2 $comic3; do
  wget -O comic_$i.png $img_url
 
  # Add 20px of whitespace above the image
- convert comic_$i.png -gravity center -background white -extent $(identify -format '%[fx:W]x%[fx:H+50]' comic_$i.png) comic_$i.png
+ convert comic_$i.png -gravity center -background white -extent $(identify -format '%[fx:W]x%[fx:H+100]' comic_$i.png) comic_$i.png
  # Add title and number above the image
- convert comic_$i.png -gravity North -font Arial -pointsize 20 -fill black -annotate +0-5 "Comic $number: $title" comic_$i.png
+ convert comic_$i.png -gravity North -font Liberation-Sans-Bold -pointsize 20 -fill black -annotate +0+20 "Comic $number: $title" comic_$i.png
 done
 
 # Combine the images into one and convert to PDF
